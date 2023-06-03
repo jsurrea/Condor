@@ -27,9 +27,10 @@ Esta funcion se encarga de cargar un archivo de Excel como un DataFrame de panda
 ### Función get_impact(text)
 Esta función es necesaria ejecutarla después de haber ejecutado el archivo .py correspondiente para cargar y entrenar el modelo. Recibe como parámetro un texto y retorna la categoría predicha para ese texto.
 
-Entrada:
+Input:
 texto: El texto para el cual queremos realizar la predicción de la categoría.
-Salida:
+
+Output:
 categoría: La etiqueta predicha para el texto proporcionado.
 
 Es importante ejecutar el archivo .py antes de utilizar esta función para asegurarse de que el modelo esté cargado y listo para hacer predicciones.
@@ -38,12 +39,10 @@ Es importante ejecutar el archivo .py antes de utilizar esta función para asegu
 Recibe como entrada un texto de una noticia y la ruta de salida de un archivo, realiza el proceso de reconocimiento de entidades y la clasificación del impacto del texto. Luego agrupa la información en un diccionario y exporta los resultados en un archivo JSON.
 
 Input:
-
 text (str): El texto de la noticia que se desea analizar.
 output_path (str): La ruta del archivo donde se exportarán los resultados.
 
 Output:
-
 Esta función no devuelve ningún valor explícito, pero exporta los resultados en un archivo JSON en la ubicación especificada por output_path.
 
 Resultados:
