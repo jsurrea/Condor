@@ -4,6 +4,7 @@ import cv2
 import torch
 import easyocr
 import numpy as np
+import urllib.request
 import matplotlib.pyplot as plt
 from segment_anything import SamAutomaticMaskGenerator, sam_model_registry
 
@@ -12,6 +13,13 @@ def detect_objects_in_video(video_path, output_path):
     """
     Detects objects in the given video and saves the results to the given output path
     """
+
+    # Download model weights
+    model_path = "sam_vit_h_4b8939.pth"
+    model_url = "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth"
+    if not os.path.exists(model_path):
+        urllib.request.urlretrieve(url, model_path)
+        print("Model Weights downloaded successfully.")
 
     # Create the model
     device = "cuda" if torch.cuda.is_available() else "cpu"
