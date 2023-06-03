@@ -4,7 +4,6 @@ import cv2
 import torch
 import easyocr
 import numpy as np
-from PIL import Image
 import matplotlib.pyplot as plt
 from segment_anything import SamAutomaticMaskGenerator, sam_model_registry
 

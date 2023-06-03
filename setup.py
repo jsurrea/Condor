@@ -1,4 +1,5 @@
 from setuptools import setup, find_packages
+from setuptools.command.install import install
 
 setup(
     name='Condor',
@@ -8,6 +9,16 @@ setup(
     description='Software y tecnología aérea, espacial y cibernética para la protección de la Amazonía',
     packages=find_packages(),
     install_requires=[
-        '',
+        'av',
+        'torch',
+        'torchvision',
+        'numpy',
+        'easyocr',
+        'matplotlib',
+        'opencv-python',
+        'pandas',
+        'scikit-learn',
+        'flair',
+        'beautifulsoup4',
     ],
 )
