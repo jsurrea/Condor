@@ -28,6 +28,15 @@ apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 pip install av torch torchvision numpy easyocr matplotlib opencv-python pandas scikit-learn flair beautifulsoup4
 ```
 
+## Uso
+
+Instalar con pip: `pip install git+https://github.com/jsurrea/Condor.git`
+
+ ```
+ from Condor.Video.segmentation import detect_objects_in_video
+ from Condor.Text.NER import ner_from_str, ner_from_file, ner_from_url
+ ```
+
 ## Objetivo 1: Identificación de objetos en videos
 
 ### Función `detect_objects_in_video(video_path: str, output_path: str)`:
