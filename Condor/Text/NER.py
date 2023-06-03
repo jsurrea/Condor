@@ -162,3 +162,25 @@ def ner_from_file(text_path: str, output_path: str) -> None:
     """
     text = obtener_contenido_archivo(text_path)
     ner_from_str(text, output_path)
+
+
+def getdata(url: str) -> str:
+    """
+    Se recibe una url hacia una noticia y se extraen los parrafos de la misma
+    """
+    r = requests.get(url)
+    htmldata = r.text
+    soup = BeautifulSoup(htmldata, 'html.parser')
+    data = ''
+    text = ''
+    for data in soup.find_all("p"):
+        text += data.get_text()
+    return text
+
+
+def ner_from_url(url: str, output_path: str) -> None:
+    """
+    Se recibe una url hacia una noticia y y una ruta con el archivo a exportar, se realiza el proceso de reconocimiento de entidades y la clasificación del impacto del texto, posteriormente se agrupan en un diccionario y se exportan como un archiv JSON
+    """
+    text = getdata(url)
+    ner_from_str(text, output_path)
